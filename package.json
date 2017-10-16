@@ -9,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "test": "babel-tape-runner src/**/*.spec.js | faucet",
+    "watch": "webpack -w",
     "build:styles": "stylus css/_index.styl",
     "build:code": "webpack -p",
     "build": "npm run build:styles && npm run build:code"

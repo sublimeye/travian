@@ -5,12 +5,18 @@ function sum([wood, clay, iron, crop]) {
     return wood + clay + iron + crop;
 }
 
-export default ({ model, lang }) => class Troops extends Component {
-    constructor() {
-        super();
+export default class Troops extends Component {
+    constructor(props) {
+        super(props);
         this.state = { tribe: 0 };
     }
+
+    componentWillMount () {
+        console.log('mounting')
+    }
+
     render() {
+        const { model, lang } = this.props
         const t = this.state.tribe;
         const tribeNames = ['romans','teutons','gauls','nature','natar','egyptians','huns'];
         return <div>

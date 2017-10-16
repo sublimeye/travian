@@ -32,7 +32,7 @@ export default class App extends Component {
 		this.setState({
 			lang: lang,
 			model: this.state.model,
-		});		
+		});
 	}
 	render() {
 		return (
@@ -43,7 +43,7 @@ export default class App extends Component {
 						<Server lang={this.state.lang}
 							version={this.state.model.version.original}
 							onChange={model => this.setModel(model)}/>
-						<Route path="/troops" component={Troops(this.state)} />
+						<Route path="/troops" render={() => <Troops {...this.state} />} />
 						<Route path="/conq" component={Conq(this.state)} />
 						<Route path="/build" component={Build(this.state)} />
 						<Route path="/def" component={Def(this.state)} />
